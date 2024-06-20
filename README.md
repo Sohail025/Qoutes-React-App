@@ -1,8 +1,5 @@
-# React + Vite
+https://qoutes-react-app.vercel.app/ Check the Application.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. This is Qoutes-Application where you can Read The Qoutes around the World.
+2. You can Bookmark the Qoutes and Save them permanentaly.
+3. You can Search The type of Qoutes which type of Qoutes you want to see.

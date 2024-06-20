@@ -9,25 +9,32 @@ export default function Header({ children }) {
     bookmarkeddata,
     bookmarkStat,
     LoginPageHandler,
+    handlebtnSiderbar,
   } = Context();
   return (
     <header class="bg-gray-800 text-white">
-      <nav class="container flex items-center justify-between py-4 mx-auto">
+      <nav class=" flex items-center justify-between py-4 mx-auto lg:mx-5">
+        <a
+          onClick={handlebtnSiderbar}
+          className="ml-3 sm:ml-4 sm:h-7 sm:w-7 lg:invisible"
+        >
+          <img
+            className="w-6"
+            src="https://img.icons8.com/?size=100&id=8113&format=png"
+            alt=""
+          />
+        </a>
         {bookmarkeddata > 0 && bookmarkStat && (
-          <p className="ml-[18px] mt-36 bg-[#30309c] absolute px-20 py-2 rounded ">
+          <p className="ml-[15px] mt-36 bg-[#30309c] absolute px-20 py-2 rounded ">
             {`You Bookmarked ${bookmarkeddata.length} Qoutes`}
           </p>
         )}
-        <a class="text-xl font-semibold ml-5">
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            alt="Flowbite Logo"
-            class="h-8"
-          />
+        <a class=" text-lg font-semibold ml-2 sm:ml-5 mr-3 w-7 lg:w-12 lg:-ml-6">
+          <img src="Logo.png" alt="Flowbite Logo" class=" lg:h-10 " />
         </a>
         <button
           onClick={BookmarkHandler}
-          className="ml-20 bg-[#30309c] absolute px-5 py-2 rounded cursor-pointer"
+          className=" bg-[#30309c] px-5 py-2 rounded cursor-pointer hidden lg:block"
         >
           Bookmarks
         </button>
@@ -60,17 +67,17 @@ export default function Header({ children }) {
               type="text"
               id="simple-search"
               placeholder="Search..."
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block pl-10 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-96"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block pl-10 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-56 h-8 sm:w-64 sm:h-10 lg:h-12 lg:w-96"
               required
             />
           </div>
           <button
             onClick={SearchBtnHandler}
             type="submit"
-            class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-20"
+            class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-7 sm:w-12 sm:h-10 flex justify-center items-center"
           >
             <svg
-              class="w-4 h-4"
+              class="w-5 h-3 sm:h-4 sm:w-5"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -89,13 +96,13 @@ export default function Header({ children }) {
         </form>
         <button
           onClick={addQouteHandler}
-          className="ml-[58rem] bg-[#30309c] absolute px-5 py-2 rounded"
+          className="bg-[#30309c] px-5 py-2 rounded invisible lg:visible lg:mr-5 hidden lg:block"
         >
           Add new Qoute
         </button>
         <button
           onClick={LoginPageHandler}
-          class="text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-lg mr-8"
+          class="text-[0.8rem] font-medium text-white bg-blue-700 hover:bg-blue-800 py-2 rounded lg:mr-3 px-2 sm:mr-5 sm:px-5"
         >
           Sign Up
         </button>
