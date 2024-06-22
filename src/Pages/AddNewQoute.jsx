@@ -6,7 +6,6 @@ export default function AddNewQoute() {
   const { bookmarks, setBookmarks } = Context();
   const [qoute, setQoute] = useState("");
   const [author, setAuthor] = useState("");
-  const [catagery, setCatagery] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,9 +14,12 @@ export default function AddNewQoute() {
       author,
       status: "created",
     };
-    set("bookmarks", [...bookmarks, newQoute]);
-    setBookmarks((data) => [...data, newQoute]);
-    console.log(newQoute);
+    if (qoute && author) {
+      set("bookmarks", [...bookmarks, newQoute]);
+      setBookmarks((data) => [...data, newQoute]);
+    }
+    setQoute("");
+    setAuthor("");
   };
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-sky-500 to-indigo-500">
