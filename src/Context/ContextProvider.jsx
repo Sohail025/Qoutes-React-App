@@ -37,7 +37,7 @@ function ContextProvider({ children }) {
   useEffect(() => {
     const idbData = async () => {
       const data = await get("bookmarks");
-      setBookmarks(data);
+      if (data) setBookmarks(data);
     };
     idbData();
   }, []);
