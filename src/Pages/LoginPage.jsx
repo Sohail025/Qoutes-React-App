@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BackBtn from "../Components/BackBtn";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -6,8 +7,6 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Simulate login logic (replace with your backend integration)
-    console.log("Submitted:", username, password);
   };
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-sky-500 to-indigo-500">
@@ -38,12 +37,15 @@ export default function Login() {
               className="px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-transparent"
             />
           </div>
-          <button
-            type="submit"
-            className="py-2 px-4 rounded-md bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700"
-          >
-            Login
-          </button>
+          <div className="flex flex-row justify-between">
+            <button
+              type="submit"
+              className="py-2 px-4 rounded-md bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700"
+            >
+              Login
+            </button>
+            <BackBtn />
+          </div>
         </form>
       </div>
     </div>

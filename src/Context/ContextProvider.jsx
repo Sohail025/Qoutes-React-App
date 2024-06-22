@@ -7,10 +7,8 @@ function ContextProvider({ children }) {
   const [bookmarkCopy, SetBookmarkCopy] = useState([]);
   const [inputSearch, SetInputSearch] = useState("");
   const [bookmarkStat, SetBookmarkStat] = useState(false);
-  const [loginPage, SetLoginPage] = useState(false);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const [addQoute, SetAddQoute] = useState(false);
   const [btnSidebar, SetbtnSidebar] = useState(false);
   const [isBookmark, SetisBookmark] = useState(false);
 
@@ -29,8 +27,6 @@ function ContextProvider({ children }) {
       console.error(error);
     }
   }
-  ///////////////////////////
-  ////////////////////////////
   useEffect(() => {
     apiFetching();
   }, [page]);
@@ -53,12 +49,6 @@ function ContextProvider({ children }) {
     if (bookmarkStat) SetQoutes(bookmarkCopy);
     if (bookmarks.length > 0) SetBookmarkStat(!bookmarkStat);
   }
-  function addQouteHandler() {
-    SetAddQoute(!addQoute);
-  }
-  function LoginPageHandler() {
-    SetLoginPage(!loginPage);
-  }
   const handleBookMark = (item) => {
     SetisBookmark(!isBookmark);
     if (bookmarks.length === 0) {
@@ -77,7 +67,6 @@ function ContextProvider({ children }) {
       }
     }
   };
-
   const handlebtnSiderbar = () => {
     SetbtnSidebar(!btnSidebar);
   };
@@ -92,18 +81,15 @@ function ContextProvider({ children }) {
         SearchBtnHandler,
         inputSearch,
         SetInputSearch,
-        addQouteHandler,
         bookmarkStat,
-        LoginPageHandler,
-        loginPage,
         backpageHandler,
         nextpageHandler,
         page,
         loading,
-        addQoute,
         btnSidebar,
         SetbtnSidebar,
         handlebtnSiderbar,
+        setBookmarks,
       }}
     >
       {children}

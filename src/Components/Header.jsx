@@ -1,14 +1,15 @@
 import { Context } from "../Context/ContextProvider";
+import LoginBtn from "./LoginBtn";
+import AddNewQouteBtn from "./AddNewQouteBtn";
+
 export default function Header({ children }) {
   const {
     BookmarkHandler,
     SearchBtnHandler,
     inputSearch,
     SetInputSearch,
-    addQouteHandler,
-    bookmarkeddata,
+    bookmarks,
     bookmarkStat,
-    LoginPageHandler,
     handlebtnSiderbar,
   } = Context();
   return (
@@ -24,9 +25,9 @@ export default function Header({ children }) {
             alt=""
           />
         </a>
-        {bookmarkeddata > 0 && bookmarkStat && (
+        {bookmarks.length > 0 && bookmarkStat && (
           <p className="ml-[15px] mt-36 bg-[#30309c] absolute px-20 py-2 rounded ">
-            {`You Bookmarked ${bookmarkeddata.length} Qoutes`}
+            {`You Bookmarked ${bookmarks.length} Qoutes`}
           </p>
         )}
         <a class=" text-lg font-semibold ml-2 sm:ml-5 mr-3 w-7 lg:w-12 lg:-ml-6">
@@ -94,18 +95,8 @@ export default function Header({ children }) {
             <span class="sr-only">Search</span>
           </button>
         </form>
-        <button
-          onClick={addQouteHandler}
-          className="bg-[#30309c] px-5 py-2 rounded invisible lg:visible lg:mr-5 hidden lg:block"
-        >
-          Add new Qoute
-        </button>
-        <button
-          onClick={LoginPageHandler}
-          class="text-[0.8rem] font-medium text-white bg-blue-700 hover:bg-blue-800 py-2 rounded lg:mr-3 px-2 sm:mr-5 sm:px-5"
-        >
-          Sign Up
-        </button>
+        <AddNewQouteBtn />
+        <LoginBtn />
       </nav>
     </header>
   );
