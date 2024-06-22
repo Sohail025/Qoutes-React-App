@@ -35,9 +35,11 @@ function ContextProvider({ children }) {
     apiFetching();
   }, [page]);
   useEffect(() => {
-    get("bookmarks").then((res) => {
-      setBookmarks(res);
-    });
+    const idbData = async () => {
+      const data = await get("bookmarks");
+      setBookmarks(data);
+    };
+    idbData();
   }, []);
   function SearchBtnHandler() {}
   function backpageHandler() {
@@ -74,7 +76,6 @@ function ContextProvider({ children }) {
         set("bookmarks", [...bookmarks, item]);
       }
     }
-    console.log(bookmarks);
   };
 
   const handlebtnSiderbar = () => {
