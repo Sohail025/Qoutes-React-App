@@ -3,7 +3,7 @@ import { Context } from "../Context/ContextProvider";
 export default function PagesBtn() {
   const { nextpageHandler, backpageHandler, page } = Context();
   return (
-    <div className="flex flex-row justify-center gap-10 lg:ml-[42rem] xl:ml-[51.4rem] pb-8">
+    <div className="flex flex-row justify-center gap-10 xl:ml-[54rem] xl:py-5 xl:-my-7">
       <button
         onClick={backpageHandler}
         className=" bg-[#30309c]  px-5 py-2 rounded cursor-pointer text-nowrap text-[#ffff]"

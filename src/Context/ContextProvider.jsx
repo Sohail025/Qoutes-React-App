@@ -17,7 +17,7 @@ function ContextProvider({ children }) {
       const currPage = `page=${page}`;
       setLoading(true);
       const res = await fetch(
-        `https://api.quotable.io/quotes/random?limit=15&maxLength=80$${currPage}`
+        `https://api.quotable.io/quotes/random?limit=15&maxLength=80&${currPage}`
       );
       const data = await res.json();
       SetBookmarkCopy(data);
@@ -70,7 +70,6 @@ function ContextProvider({ children }) {
   const handlebtnSiderbar = () => {
     SetbtnSidebar(!btnSidebar);
   };
-
   return (
     <SetContext.Provider
       value={{

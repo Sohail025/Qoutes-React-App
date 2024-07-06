@@ -5,7 +5,7 @@ export default function AddNewQouteBtn() {
     <>
       <Link
         to={"/addnewqoute"}
-        className="bg-[#30309c] px-5 py-2 rounded invisible lg:visible lg:mr-5 hidden lg:block"
+        className="bg-[#229371] font-bold px-5 py-2 rounded invisible lg:visible lg:mr-5 hidden xl:block "
       >
         Add new Qoute
       </Link>

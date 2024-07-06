@@ -1,6 +1,7 @@
 import { Context } from "../Context/ContextProvider";
 import LoginBtn from "./LoginBtn";
 import AddNewQouteBtn from "./AddNewQouteBtn";
+import Logo from "./Logo";
 
 export default function Header({ children }) {
   const {
@@ -13,29 +14,23 @@ export default function Header({ children }) {
     handlebtnSiderbar,
   } = Context();
   return (
-    <header class="bg-gray-800 text-white">
-      <nav class=" flex items-center justify-between py-4 mx-auto lg:mx-5">
-        <a
+    <header class="bg-[#1b2f30] text-white ">
+      <nav class=" flex items-center justify-evenly py-3 mx-[0.45rem] md:py-5 md:mx-7 lg:mx-10 lg:py-7 xl:py-[0.3rem] xl:mx-4">
+        <img
           onClick={handlebtnSiderbar}
-          className="ml-3 sm:ml-4 sm:h-7 sm:w-7 lg:invisible"
-        >
-          <img
-            className="w-6"
-            src="https://img.icons8.com/?size=100&id=8113&format=png"
-            alt=""
-          />
-        </a>
+          className="w-[1.5rem] h-[1.5rem] sm:w-[2rem] sm:h-[2rem] md:w-[2.5rem] md:h-[2.5rem] xl:hidden"
+          src="https://img.icons8.com/?size=100&id=8113&format=png"
+          alt=""
+        />
         {bookmarks.length > 0 && bookmarkStat && (
           <p className="ml-[15px] mt-36 bg-[#30309c] absolute px-20 py-2 rounded ">
             {`You Bookmarked ${bookmarks.length} Qoutes`}
           </p>
         )}
-        <a class=" text-lg font-semibold ml-2 sm:ml-5 mr-3 w-7 lg:w-12 lg:-ml-6">
-          <img src="Logo.png" alt="Flowbite Logo" class=" lg:h-10 " />
-        </a>
+        <Logo>{"hidden xl:block"}</Logo>
         <button
           onClick={BookmarkHandler}
-          className=" bg-[#30309c] px-5 py-2 rounded cursor-pointer hidden lg:block"
+          className="bg-[#128251] font-bold px-5 py-2 rounded cursor-pointer hidden shadow-xl xl:block"
         >
           Bookmarks
         </button>
@@ -68,17 +63,17 @@ export default function Header({ children }) {
               type="text"
               id="simple-search"
               placeholder="Search..."
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block pl-10 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-56 h-8 sm:w-64 sm:h-10 lg:h-12 lg:w-96"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block pl-10 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-56 h-8 sm:w-[22rem] sm:h-10 md:w-[25rem] md:h-[3.2rem] lg:h-[3.8rem] lg:w-[28rem] xl:h-[2.5rem]"
               required
             />
           </div>
           <button
             onClick={SearchBtnHandler}
             type="submit"
-            class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-7 sm:w-12 sm:h-10 flex justify-center items-center"
+            class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[2rem] h-[] sm:w-12 sm:h-10 flex justify-center items-center md:h-[3.2rem] md:ml-7 md:w-[10rem] lg:ml-20 lg:w-20 xl:h-[2.5rem]"
           >
             <svg
-              class="w-5 h-3 sm:h-4 sm:w-5"
+              class="w-4 h-3 sm:h-4 sm:w-5 lg:w-10"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -97,6 +92,7 @@ export default function Header({ children }) {
         </form>
         <AddNewQouteBtn />
         <LoginBtn />
+        <Logo>{"block xl:hidden"}</Logo>
       </nav>
     </header>
   );
